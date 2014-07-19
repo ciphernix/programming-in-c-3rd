@@ -153,6 +153,7 @@ int main (void)
 	char text [999];
 	char s1[81];
 	char s2[81];
+	char all = 'n';
 
 	printf("Enter text: ");
 	gets(text);
@@ -162,8 +163,17 @@ int main (void)
 
 	printf("Replacement: ");
 	gets(s2);
+	
+	printf("Replace all \? [y/n]: ");
+	all = getchar();
+	if ( all == 'y' )
+	{
 
-	replaceString(text,s1, s2);
+		while (replaceString(text,s1, s2))
+			continue;
+	}else
+		replaceString(text,s1, s2);
+
 	printf("%s\n",text);
 
 	return 0;
