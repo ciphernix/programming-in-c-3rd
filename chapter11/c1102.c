@@ -11,11 +11,17 @@
  	struct entry *next;
  }
  
- void insertEntry(struct entry *listPtr, *value)
+ void insertEntry(struct entry *listPtr, *value,struct newEntry )
  {
+ 	struct entry temp;
+ 	
  	while ( listPtr != (struct entry *) 0) {
  		if ( listPtr->value == value )
  		{
- 			//?
+ 			newEntry.next = listPtr->next;
+ 			listPtr.next = &newEntry;
+ 			
+ 		}else {
+ 			listPtr = listPtr->next;
  		}
  	}
