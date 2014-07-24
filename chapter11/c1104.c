@@ -17,9 +17,9 @@ void removeEntry (struct entry *node)
 {
 	struct entry *temp;
 	
-	//lets remove root if the last node is specified
-	if (node.next == (struct entry *) 0)
-	{
+	//lets remove root if null is specified
+	if (node == (struct entry *) 0)
+	{	
 		root = root->next;
 		return ;
 	}
@@ -29,7 +29,7 @@ void removeEntry (struct entry *node)
 }
 
 //Function to insert a new entry after the specified node
- void insertEntry(struct entry *node; struct entry *newEntry )
+ void insertEntry(struct entry *node, struct entry *newEntry )
  {
  	struct entry *temp;
  	
@@ -61,7 +61,6 @@ int main (void)
 {
 	struct entry  node0, node1, node2, node3, node4;
 	root = &node0;
-	struct entry *listPtr = root;
 
 	node0.value = 0;
 	node0.next = &node1;
@@ -72,23 +71,28 @@ int main (void)
 	node3.value = 3;
 	node4.value = 4;
 
-	printList (listPtr);
+	printList (root);
 	
 	printf("\nInserting value %i after value %i\n", node3.value, node2.value);
 	insertEntry(&node2, &node3);
+	
 
-	printList(listPtr);
+	printList(root);
 
 	printf("\nInserting value %i at the beginning\n", node4.value);
-	insertEntry(&node4,(struct entry *) 0 );
+	insertEntry((struct entry *) 0, &node4 );
 
-	printList(listPtr);
+	printList(root);
 
 	printf("Removing value after %i\n",node1.value);
 	
-	removeEntry(*node1);
-	printList(listPtr);	
+	removeEntry(&node1);
+	printList(root);	
 	
+	printf("Removing the first node %i\n",root->value);
+	
+	removeEntry((struct entry *) 0);
+	printList(root);	
 	
 	return 0;
 }
