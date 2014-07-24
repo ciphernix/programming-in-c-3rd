@@ -16,7 +16,7 @@ struct entry *last; //to point to the last node;
 //function to print linked list starting at node
 void printList(struct entry *node)
 {
-	while (node->next != (struct entry *) 0)
+	while (node != (struct entry *) 0)
  	{
  		printf("%i\n", node->value);
  		node = node->next;
@@ -27,9 +27,9 @@ void printList(struct entry *node)
 //function will stop at the root node
 void reversePrint(struct entry *node)
 {
-	while (node->prev != node )
+	while (node != (struct entry *) 0 )
 	{
-		printf("%i\n", node->value;);
+		printf("%i\n", node->value);
 		node = node->prev;
 	}
 }
@@ -52,7 +52,7 @@ int main(void)
 	root = &node0;
 	last = &node4;
 	
-	node0.prev = &node0; //first node on our list
+	node0.prev = (struct entry *) 0; //first node on our list
 	node1.prev = &node0;
 	node2.prev = &node1;
 	node3.prev = &node2;
@@ -65,6 +65,7 @@ int main(void)
 	node4.next = (struct entry *) 0;
 	
 	insertValue(root);
+	root = &node0;
 	printf("Printing values\n");
 	printList(root);
 	printf("Printing reverse values\n");
