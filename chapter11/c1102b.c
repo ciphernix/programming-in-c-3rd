@@ -1,5 +1,8 @@
 /*
- *Chapter11 execrise 4.
+ *function insertEntry to insert a new entry into a link list.
+ *the procidure takes as arguement a pointer to the list entry to
+ *be inserted of type struct entry and pointer to an element in the list after
+ *which the new entry is to be inserted
  */
 
 #include <stdio.h>
@@ -11,22 +14,6 @@
  };
  
  struct entry *root;  // use to always points to the first node
- 
-//Function to remove the entry after the node
-void removeEntry (struct entry *node)
-{
-	struct entry *temp;
-	
-	//lets remove root if the last node is specified
-	if (node.next == (struct entry *) 0)
-	{
-		root = root->next;
-		return ;
-	}
-	//remove next node here
-	temp = node->next;
-	node->next = temp->next;
-}
 
 //Function to insert a new entry after the specified node
  void insertEntry(struct entry *node; struct entry *newEntry )
@@ -83,12 +70,6 @@ int main (void)
 	insertEntry(&node4,(struct entry *) 0 );
 
 	printList(listPtr);
-
-	printf("Removing value after %i\n",node1.value);
-	
-	removeEntry(*node1);
-	printList(listPtr);	
-	
 	
 	return 0;
 }
