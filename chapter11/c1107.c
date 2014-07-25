@@ -47,13 +47,18 @@ int main (void)
 void sort (int *array, int *n)
 {
 	int * const arrayEnd = array + *n;
-	int temp;
+	int *temp;
+	int *ptr;
 	
-	while (array < arrayEnd )
-	{
-		if (*array > *(array + 1))
+	for(; array < arrayEnd - 1; array++)
+	{	for (ptr = array + 1; ptr < arrayEnd; ptr++)
 		{
-			temp = *array;
-			*array = *(array + 1)
-			
+			if (*array > *ptr)
+			{
+				temp = array;
+				*array = *(array + 1);
+				*ptr = *temp;
+			}
+		}
+	}
 }
