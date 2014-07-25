@@ -16,7 +16,7 @@ struct entry *last; //to point to the last node;
 //function to print linked list starting at node
 void printList(struct entry *node)
 {
-	while (node->next != (struct entry *) 0)
+	while (node != (struct entry *) 0)
  	{
  		printf("%i\n", node->value);
  		node = node->next;
@@ -27,9 +27,9 @@ void printList(struct entry *node)
 //function will stop at the root node
 void reversePrint(struct entry *node)
 {
-	while (node->prev != node )
+	while (node != (struct entry *) 0 )
 	{
-		printf("%i\n", node->value;);
+		printf("%i\n", node->value);
 		node = node->prev;
 	}
 }
@@ -52,8 +52,9 @@ void insertEntry(struct entry *node, struct entry *newEntry)
 	//if node == null, insert newentry at root
 	if (node == (struct entry *) 0 )
 	{
-		newEntry->next = root->next;
+		newEntry->next = root;
 		newEntry->prev = root->prev;
+		root = newEntry;
 		return ;
 	}
 	
@@ -66,7 +67,7 @@ void insertEntry(struct entry *node, struct entry *newEntry)
 void removeEntry(struct entry *node)
 {
 	struct entry *temp;
-	if (node == node->prev ) //removing root node
+	if (node == root ) //removing root node
 	{
 		root = node->next;
 		root->prev = node->next;
@@ -95,7 +96,7 @@ int main(void)
 	root = &node0;
 	last = &node4;
 	
-	node0.prev = &node0; //first node on our list
+	node0.prev = (struct entry *) 0; //first node on our list
 	node1.prev = &node0;
 	node2.prev = &node1;
 	node3.prev = &node2;
@@ -121,9 +122,14 @@ int main(void)
 	insertEntry(&node1, &node2);
 	printList(root);
 	
-	printf("Remove node %i and insert it at the top\n" node4.value);
+	printf("Remove node %i and insert it at the top\n",node4.value);
 	removeEntry(&node4);
 	insertEntry((struct entry *) 0, &node4);
+	printList(root);
+
+	printf("Remove node %i and insert it at the bottom\n",node4.value);
+	removeEntry(&node4);
+	insertEntry(last, &node4);
 	printList(root);
 	
 	return 0;
