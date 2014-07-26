@@ -47,17 +47,17 @@ int main (void)
 void sort (int *array, int *n)
 {
 	int * const arrayEnd = array + *n;
-	int *temp;
+	int temp;
 	int *ptr;
 	
-	for(; array < arrayEnd - 1; array++)
-	{	for (ptr = array + 1; ptr < arrayEnd; ptr++)
+	for(; array < (arrayEnd - 1); array++)
+	{	for (ptr = (array + 1); ptr < arrayEnd; ptr++)
 		{
 			if (*array > *ptr)
 			{
-				temp = array;
-				*array = *(array + 1);
-				*ptr = *temp;
+				temp = *array;
+				*array = *(ptr);
+				*ptr = temp;
 			}
 		}
 	}
@@ -74,7 +74,7 @@ int main (void)
         for(i = 0; i < 16; ++i) 
                 printf ("%i ", array[i]);
         
-        sort (int array, int &i);
+        sort (array, &i);
         
         printf ("\n\nThe array after the sort:\n");
         for(i = 0; i < 16; ++i) 
