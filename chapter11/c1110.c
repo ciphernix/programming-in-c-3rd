@@ -26,9 +26,9 @@
  * }
 */
 
-int compareString (const char const *s1, const char const *s2)
+int compareString (char *s1, char *s2)
 {
-	while (*s1 == *s2 && *s1 != '/0' && *s2 != '/0')
+	while (*s1 == *s2 && *s1 != '\0' && *s2 != '\0')
 	{
 		s1++;
 		s2++;
@@ -60,9 +60,11 @@ int main (void)
 	int res;
 	
 	printf("S1: ");
-	readLine(s1);
+	//readLine(s1);
+	scanf("%s", s1);
 	printf("S2: ");
-	readLine(s2);
+	//readLine(s2);
+	scanf("%s", s2);
 	
 	res = compareString(s1, s2);
 	
@@ -70,7 +72,7 @@ int main (void)
 	{
 		printf("%s is greater than %s\n", s1, s2);
 	}
-	else if (res == 1 )
+	else if (res == -1 )
 	{
 		printf("%s is less than %s\n", s1, s2);
 	} 
