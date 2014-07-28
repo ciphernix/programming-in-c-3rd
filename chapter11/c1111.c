@@ -20,7 +20,7 @@ struct date
  	int month;
  	int day;
  	int year;
-}
+};
 
 //function to determine if a year is leap 
 bool isLeap(int year)
@@ -35,10 +35,10 @@ bool isLeap(int year)
 //function to determine the numbers of days in a montg 
 int daysInMonth (struct date *newDate)
 {
- 	int month[12] = { 0, 31, 28, 31, 30, 31, 30, 31
- 						31, 30, 31, 30, 31};
+ 	int month[13] = { 0, 31, 28, 31, 30, 31, 30, 31,
+		31, 30, 31, 30, 31};
  	int i = newDate->month;
- 	int year == newDate->year;
+ 	int year = newDate->year;
  	
  	if (i == 2 && isLeap(year))
  		month[i]++;
@@ -71,7 +71,7 @@ int main(void)
 	printf("Enter date (dd-mm-yyyy): ");
 	scanf("%i-%i-%i", &newDate.day, &newDate.month, &newDate.year);
 	dateUpdate(&newDate);
-	printf("%2i-%2i-%4i\n",newDate.day, newDate.month, newDate.year);
+	printf("%02i-%02i-%4i\n",newDate.day, newDate.month, newDate.year);
 	
 	return 0;
 }
