@@ -6,7 +6,7 @@
  *inregardless of which machine you are running. However, if the sign bit is 
  *1, on some machines 1s are shifted in, and on others 0s are shifted in.This 
  *former type of operation is known as an arithmetic right shift, whereas the 
- *latter is known as a logical right shift."
+ *latter is known as a logical right shift." see page 288
  */
  
 #include <stdio.h>
