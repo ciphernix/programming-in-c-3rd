@@ -4,7 +4,9 @@
  *write a function called int_size that returns the number of bits contained
  *in an int on your particular machine.
  */
- 
+
+#include <stdio.h>
+
 int int_size(void)
 {
 	unsigned int n = ~0;
@@ -13,7 +15,7 @@ int int_size(void)
 	while ( n > 0 )
 	{
  		n = n >> 1;
- 		countr++:
+ 		counter++;
 	}
 	return counter - 1; //account for sign bit
 }
