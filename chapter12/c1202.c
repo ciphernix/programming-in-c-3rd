@@ -17,13 +17,13 @@
 
 bool isLogicalShift(void)
 {
-	int n = -0777;
+	signed int n = -07;
 	
 	n = n >> 1;
 	if (n > 0 ) //arithmetic right shift
-		return false;
-	else 
 		return true;
+	else 
+		return false;
 }
 
 int main(void)
