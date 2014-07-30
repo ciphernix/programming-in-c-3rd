@@ -54,12 +54,12 @@ int bit_set(unsigned int x, int n)
 int main (void)
 {
 	unsigned int x, n;
-	
+	printf("Number of bits for u int : %i\n", int_size());	
 	printf("Enter int x and bit number to test: ");
-	scanf("%i %i", &x, &n);
+	scanf("%u %u", &x, &n);
 	
 	if (bit_test(x,n))
-		printf("Bit %i is set on %i\n", x,n);
+		printf("Bit %i is set on %i\n", n,x);
 	else {
 		printf("Bit %i is not set, setting...\n", n);
 		x = bit_set(x,n);
