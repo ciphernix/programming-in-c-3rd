@@ -34,7 +34,7 @@ bool bit_test(unsigned int x, int n)
 	 *3.temp = temp >> n
 	 *3.temp & x == temp if n bit is set
 	 */
-	int j = int_size()
+	int j = int_size();
 	unsigned int temp = 1 << j;
 	temp = temp >> n;
 	if ((temp & n) == temp) //nbit is set
@@ -43,11 +43,11 @@ bool bit_test(unsigned int x, int n)
 		return false;
 }
 
-int bit_set(unsigned int x, n)
+int bit_set(unsigned int x, int n)
 {
 	int j = int_size();
 	unsigned int temp = 1 << j;
-	temp = >> n;
+	temp = temp >> n;
 	return (temp | x);
 }
 
@@ -63,7 +63,7 @@ int main (void)
 	else {
 		printf("Bit %i is not set, setting...\n", n);
 		x = bit_set(x,n);
-		printf("New value of x: %i", x);
+		printf("New value of x: %i\n", x);
 	}
 	
 	return 0;
