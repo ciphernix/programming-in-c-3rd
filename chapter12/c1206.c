@@ -50,7 +50,7 @@ int main (void)
 	int pattern, n;
 	
 	printf("Enter pattern n : ");
-	scanf("%i %i", &pattern, &i):
+	scanf("%i %i", &pattern, &n);
 	printf("The %i most bits of %i is %i\n",n,pattern, right_most(pattern, n));
 	return 0;
 }
