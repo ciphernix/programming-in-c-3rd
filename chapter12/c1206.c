@@ -15,7 +15,7 @@
  *binary). The function returns 11 to indicate that the pattern was found in 
  *the source beginning with bit number 11.
  */
- #include
+ #include <stdio.h>
  
  //Function to calculate the size of an int
 int int_size(void)
