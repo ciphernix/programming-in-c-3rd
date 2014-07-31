@@ -35,7 +35,7 @@ bool bit_test(unsigned int x, int n)
 	 *3.temp & x == temp if n bit is set
 	 */
 	int j = int_size();
-	unsigned int temp = 1 << j;
+	unsigned int temp = 1 << (j - 1);
 	temp = temp >> n;
 	if ((temp & n) == temp) //nbit is set
 		return true;
@@ -46,7 +46,7 @@ bool bit_test(unsigned int x, int n)
 int bit_set(unsigned int x, int n)
 {
 	int j = int_size();
-	unsigned int temp = 1 << j;
+	unsigned int temp = 1 << (j - 1);
 	temp = temp >> n;
 	return (temp | x);
 }
