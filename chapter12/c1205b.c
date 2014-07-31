@@ -25,32 +25,19 @@ int int_size(void)
 	return counter;
 }
 
-int numberOfBits(unsigned int x)
-{
-	int sizeOfInt = int_size();
-	int counter = 0;
-	unsigned int temp = 1 << (sizeOfInt - 1);
-	while ( (temp | x) != x)
-	{
-		temp = temp >> 1;
-		counter++;
-	}
-	
-	return sizeOfInt - counter;
-}
 
 bool bit_test(unsigned int x, int n)
 {
 	/*algorithm:
-	 *1. j = numberOfBits(x) 
+	 *1. j = int_size()
 	 *2.temp = 1 << j (left shift 1 j times to place bit on the left)
 	 *3.temp = temp >> n
 	 *3.temp & x == temp if n bit is set
 	 */
-	int j = numberOfBits(x);
+	int j = int_size();
 	unsigned int temp = 1 << (j - 1);
 	temp = temp >> n;
-	if ((temp & x) == temp) //nbit is set
+	if ((temp & n) == temp) //nbit is set
 		return true;
 	else  
 		return false;
@@ -58,7 +45,7 @@ bool bit_test(unsigned int x, int n)
 
 int bit_set(unsigned int x, int n)
 {
-	int j = numberOfBits(x);
+	int j = int_size();
 	unsigned int temp = 1 << (j - 1);
 	temp = temp >> n;
 	return (temp | x);
@@ -70,8 +57,6 @@ int main (void)
 	printf("Number of bits for u int : %i\n", int_size());	
 	printf("Enter int x and bit number to test: ");
 	scanf("%u %u", &x, &n);
-
-	printf("Number of bits in %i is %i\n", x, numberOfBits(x) );
 	
 	if (bit_test(x,n))
 		printf("Bit %i is set on %i\n", n,x);
