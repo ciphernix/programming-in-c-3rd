@@ -63,7 +63,7 @@ int right_most(int pattern, int n)
  see if the rightmost n bits of pattern occur in source.*/
 int bitpat_search (int source, int pattern, int n)
 {
-	int rightMost, int counter, int index, int temp, int intSize;
+	int rightMost,counter,index,temp,intSize;
 	
 	rightMost = right_most(pattern, n);
 	intSize = int_size();
