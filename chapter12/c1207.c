@@ -49,6 +49,9 @@ int numberOfBits(unsigned int x)
  * 1. get the number of bits from source (nSourceBits)
  * 2. set unsigned int temp to ~1
  * 3. rightshift temp by (intSize - nSourceBits) + start
+ * 4. temp & source
+ * 5. rightshift temp by (nTempBits - n)
+ * 6. return temp
  */
 int bitpat_get(unsigned int source, int start, int n)
 {
