@@ -75,7 +75,7 @@ int right_most(int pattern, int n)
 	*/
 int bitpat_search (int source, int pattern, int n)
 {
-	int rightMost,counter,index,temp,intSize,nSourceBits;
+	int rightMost,index,nSourceBits;
 	
 	rightMost = right_most(pattern, n);
 	nSourceBits = numberOfBits(source);
