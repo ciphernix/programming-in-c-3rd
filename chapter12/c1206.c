@@ -31,6 +31,21 @@ int int_size(void)
 	return (counter - 1);
 }
 
+//function to calculate the min number of bits needed to represent a value
+int numberOfBits(unsigned int x)
+{
+	int sizeOfInt = int_size();
+	int counter = 0;
+	unsigned int temp = 1 << (sizeOfInt - 1);
+	while ( (temp | x) != x)
+	{
+		temp = temp >> 1;
+		counter++;
+	}
+	
+	return sizeOfInt - counter;
+}
+
 //function to return the n right most bits
 int right_most(int pattern, int n)
 {
@@ -42,6 +57,18 @@ int right_most(int pattern, int n)
 	rightMost = pattern & temp;
 	
 	return rightMost;
+}
+
+/*The function searches the integer source, starting at the leftmost bit, to 
+ see if the rightmost n bits of pattern occur in source.*/
+int bitpat_search (int source, int pattern, int n)
+{
+	int rightMost, int counter, int index, int temp, int intSize;
+	
+	rightMost = right_most(pattern, n);
+	intSize = int_size();
+	
+	return index;
 }
 
 //main function to test
