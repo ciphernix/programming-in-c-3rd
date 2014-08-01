@@ -10,9 +10,10 @@
  *begins, where the left- most bit is bit number 0. If the pattern is not 
  *found, then have the function return –1. So, for example, the call
  *	index = bitpat_search (0xe1f4, 0x5, 3);
- *causes the bitpat_search function to search the number 0xe1f4 ( = 1110 0001 
- *1111 0100 binary ) for the occurrence of the three-bit pattern 0x5 (= 101 
- *binary). The function returns 11 to indicate that the pattern was found in 
+ *causes the bitpat_search function to search the number 0xe1f4 
+ *( = 1110 0001 1111 0100 binary ) for the occurrence of the three-bit
+ *pattern 0x5 (= 101 binary). 
+ *The function returns 11 to indicate that the pattern was found in 
  *the source beginning with bit number 11.
  */
  #include <stdio.h>
@@ -74,21 +75,36 @@ int right_most(int pattern, int n)
 	*/
 int bitpat_search (int source, int pattern, int n)
 {
-	int rightMost,counter,index,temp,intSize;
+	int rightMost,counter,index,temp,intSize,nSourceBits;
 	
 	rightMost = right_most(pattern, n);
-	intSize = int_size();
+	nSourceBits = numberOfBits(source);
+	rightMost = rightMost << (nSourceBits - n);
 	
-	return index;
+	index = 0;
+	while ( (index + n) < nSourceBits)
+	{
+		if ( (rightMost & pattern) == rightMost )
+			return index;
+		else 
+		{
+			rightMost = rightMost >> 1;
+			index++;
+		}
+	}
+	return -1; //not found
 }
 
 //main function to test
 int main (void)
 {
-	int pattern, n;
+	int index, source, pattern, n;
 	
-	printf("Enter pattern n : ");
-	scanf("%i %i", &pattern, &n);
+	printf("Enter 3 ints (source pattern n ): ");
+	scanf("%i %i %i", &source, &pattern, &n);
 	printf("The %i most bits of %i is %i\n",n,pattern, right_most(pattern, n));
+	index = bitpat_search (source, pattern, n);
+	printf("Pattern is at index %i\n", index);
+	
 	return 0;
 }
