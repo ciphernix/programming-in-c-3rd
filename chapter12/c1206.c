@@ -60,7 +60,18 @@ int right_most(int pattern, int n)
 }
 
 /*The function searches the integer source, starting at the leftmost bit, to 
- see if the rightmost n bits of pattern occur in source.*/
+ see if the rightmost n bits of pattern occur in source.
+ 	algo:
+		1. Get the n right most bits of pattern (rightMost)
+		2. Get the number of bits in source (SourceBits)
+		3. leftshift RightMost by SourceBits - n
+		4. set index to 0
+		5. while (index + n < SourceBits)
+		6. 	if RightMost & Pattern == RightMost, return index
+		7.	else rightshift RightMost by one, increase index by 1
+		8. end while.
+		9. If we exit out of the while loop, return -1.
+	*/
 int bitpat_search (int source, int pattern, int n)
 {
 	int rightMost,counter,index,temp,intSize;
