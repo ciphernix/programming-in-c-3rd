@@ -99,7 +99,7 @@ int bitpat_search (int source, int pattern, int n)
 		}
 	}
 
-	return -1
+	return -1;
 }
 
 /*
