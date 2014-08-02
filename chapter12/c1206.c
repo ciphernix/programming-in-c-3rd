@@ -72,6 +72,13 @@ int right_most(int pattern, int n)
 		7.	else rightshift RightMost by one, increase index by 1
 		8. end while.
 		9. If we exit out of the while loop, return -1.
+		***********************The above doesn't work********
+		****Lets  try the following********
+		1. Get the n right most bits of pattern (pRightMost)
+		2. Get the number of bits in source (SoruceBits)
+		3. set index to (SourceBits - n ) - 1
+		4. if the n right most bist of source xor with pRightMost == 0, return index
+		5. right shift source by n bits and decrase index by n, if n < 0 return -1, else go to step 4.
 	*/
 int bitpat_search (int source, int pattern, int n)
 {
