@@ -72,20 +72,37 @@ int right_most(int pattern, int n)
 		7.	else rightshift RightMost by one, increase index by 1
 		8. end while.
 		9. If we exit out of the while loop, return -1.
-<<<<<<< HEAD
 		***********************The above doesn't work********
 		****Lets  try the following********
 		1. Get the n right most bits of pattern (pRightMost)
-		2. Get the number of bits in source (SoruceBits)
-		3. set index to (SourceBits - n ) - 1
-		4. if the n right most bist of source xor with pRightMost == 0, return index
+		2. Get the number of bits in source (sourceBits)
+		3. set index to (sourceBits - n ) - 1
+		4. if the n right most bits of source xor with pRightMost == 0, return index
 		5. right shift source by n bits and decrase index by n, if n < 0 return -1, else go to step 4.
-=======
-		
-	******************************************
-		1. Get the n right most
->>>>>>> e1b7b84e8db1c33464dfa0fd0d7c4ae2e399fa19
 	*/
+
+int bitpat_search (int source, int pattern, int n)
+{
+	int pRightMost, sourceBits, index;
+
+	pRightMost = right_most(pattern, n);
+	sourceBits = numberOfBits(source);
+	index = (sourceBits - n ) - 1;
+	while ( index >= 0 )
+	{
+		if ( (right_most(source, n) ^ pRightMost) == 0 )
+			return index;
+		else
+		{
+			source = source >> n;
+			index = index - n;
+		}
+	}
+
+	return -1
+}
+
+/*
 int bitpat_search (int source, int pattern, int n)
 {
 	int rightMost,index,nSourceBits;
@@ -109,7 +126,7 @@ int bitpat_search (int source, int pattern, int n)
 	}
 	return -1; //not found
 }
-
+*/
 //main function to test
 int main (void)
 {
