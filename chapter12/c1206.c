@@ -72,6 +72,9 @@ int right_most(int pattern, int n)
 		7.	else rightshift RightMost by one, increase index by 1
 		8. end while.
 		9. If we exit out of the while loop, return -1.
+		
+	******************************************
+		1. Get the n right most
 	*/
 int bitpat_search (int source, int pattern, int n)
 {
