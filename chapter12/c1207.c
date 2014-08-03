@@ -48,23 +48,29 @@ int numberOfBits(unsigned int x)
  *extracts n bits from source starting at start.
  * 1. get the number of bits from source (nSourceBits)
  * 2. set unsigned int temp to ~0
- * 3. rightshift temp by (intSize - nSourceBits) + start
- * 4. temp = temp & source
- * 5. rightshift temp by (nTempBits - n) - 1
- * 6. return temp
+ * 3. rightshift temp by (intSize - nSourceBits)
+ * 4. rightshift temp by start; get nTempBits
+ * 5. temp = temp & source
+ * 6. if nTempBits > n, then leftshift temp by offset, rightshift temp by offset
+ * 7. return temp
  */
 int bitpat_get(unsigned int source, int start, int n)
 {
-	unsigned int temp, nTempBits,nSourceBits,intSize;
+	unsigned int temp, nTempBits,nSourceBits,intSize, offset;
 	
 	intSize = int_size();
 	nSourceBits = numberOfBits(source);
 	
 	temp = ~0;
-	temp = temp >> (intSize - nSourceBits) + start; 
-	temp = temp & source;
+	temp = temp >> (intSize - nSourceBits);
+	temp = temp >> start;
 	nTempBits = numberOfBits(temp);
-	temp = temp >> nTempBits - n - 1;
+	temp = temp & source;
+	if (nTempBits >= n)
+	{
+		offset = nTempBits - n;
+		temp = temp >> offset;
+	}
 	return temp;
 }
 
@@ -76,7 +82,7 @@ int main (void)
 	scanf("%u %u %u", &source, &start, &n);
 	
 	res = bitpat_get(source, start, n);
-	printf("%u \n");
+	printf("%u \n", res);
 	
 	return 0;
 }
