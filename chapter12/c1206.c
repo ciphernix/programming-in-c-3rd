@@ -63,45 +63,31 @@ int right_most(int pattern, int n)
 /*The function searches the integer source, starting at the leftmost bit, to 
  see if the rightmost n bits of pattern occur in source.
  	algo:
-		1. Get the n right most bits of pattern (rightMost)
-		2. Get the number of bits in source (SourceBits)
-		3. leftshift RightMost by SourceBits - n
-		4. set index to 0
-		5. while (index + n < SourceBits)
-		6. 	if RightMost & Pattern == RightMost, return index
-		7.	else rightshift RightMost by one, increase index by 1
-		8. end while.
-		9. If we exit out of the while loop, return -1.
-		***********************The above doesn't work********
 		****Lets  try the following********
 		1. Get the n right most bits of pattern (pRightMost)
 		2. Get the number of bits in source (sourceBits)
-		3. set index to (sourceBits - n ) - 1
+		3. set index to (sourceBits - n ) 
 		4. if the n right most bits of source xor with pRightMost == 0, return index
-		5. right shift source by n bits and decrase index by n, if n < 0 return -1, else go to step 4.
+		5. right shift source by 1 bits and decrase index by 1, if n < 0 return -1, else go to step 4.
 	*/
 
 int bitpat_search (int source, int pattern, int n)
 {
-	int pRightMost, sourceBits, index;
+	int pRightMost, sourceBits, index, res;
 
 	pRightMost = right_most(pattern, n);
 	sourceBits = numberOfBits(source);
-	index = (sourceBits - n ) + 1;
+	index = (sourceBits - n ) ;
+	res = -1;
 	while ( index >= 0 )
 	{
-		printf("index %i\n", index);
-		printf("nsource : %i\n", right_most(source,n));
 		if ( (right_most(source, n) ^ pRightMost) == 0 )
-			return index;
-		else
-		{
-			source = source >> n;
-			index = index - n;
-		}
+			res = index;
+		source = source >> 1;
+		index = index - 1;
 	}
 
-	return -1;
+	return res;
 }
 
 /*
