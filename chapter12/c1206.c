@@ -87,9 +87,11 @@ int bitpat_search (int source, int pattern, int n)
 
 	pRightMost = right_most(pattern, n);
 	sourceBits = numberOfBits(source);
-	index = (sourceBits - n ) - 1;
+	index = (sourceBits - n ) + 1;
 	while ( index >= 0 )
 	{
+		printf("index %i\n", index);
+		printf("nsource : %i\n", right_most(source,n));
 		if ( (right_most(source, n) ^ pRightMost) == 0 )
 			return index;
 		else
