@@ -50,7 +50,7 @@ int numberOfBits(unsigned int x)
  * 2. set unsigned int temp to ~0
  * 3. rightshift temp by (intSize - nSourceBits) + start
  * 4. temp = temp & source
- * 5. rightshift temp by (nTempBits - n)
+ * 5. rightshift temp by (nTempBits - n) - 1
  * 6. return temp
  */
 int bitpat_get(unsigned int source, int start, int n)
@@ -64,7 +64,7 @@ int bitpat_get(unsigned int source, int start, int n)
 	temp = temp >> (intSize - nSourceBits) + start; 
 	temp = temp & source;
 	nTempBits = numberOfBits(temp);
-	temp = temp >> nTempBits - n;
+	temp = temp >> nTempBits - n - 1;
 	return temp;
 }
 
