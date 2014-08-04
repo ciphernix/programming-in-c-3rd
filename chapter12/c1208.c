@@ -78,4 +78,13 @@ int right_most(int pattern, int n)
         return rightMost;
 }
 
-
+/*
+ * Sets bits of size fieldSize within source to val starting at 
+ * 'start'.
+ 	1. get the number of bits needed to represemt source (lenSource)
+ 	2. get the bits left of 'start' index (bitpat_get(source, 0,start) - call this sLeft.
+ 	3. leftshift sLeft by (lenSource - start)
+ 	4. leftshift val by (lenSource - start) - fieldSize
+ 	
+ */
+void bitpat_set (*source, val, start, fieldSize)
