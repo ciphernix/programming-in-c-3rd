@@ -65,26 +65,19 @@ int bitpat_get(unsigned int source, int start, int n)
         return temp;
 }
 
-//function to return the n right most bits
-int right_most(int pattern, int n)
-{
-        int temp, rightMost;
-
-        temp = ~0;
-        temp = temp << n;
-        temp = ~temp;
-        rightMost = pattern & temp;
-
-        return rightMost;
-}
-
 /*
  * Sets bits of size fieldSize within source to val starting at 
  * 'start'.
- 	1. get the number of bits needed to represemt source (lenSource)
+ 	1. get the number of bits needed to represent source (lenSource)
  	2. get the bits left of 'start' index (bitpat_get(source, 0,start) - call this sLeft.
  	3. leftshift sLeft by (lenSource - start)
  	4. leftshift val by (lenSource - start) - fieldSize
- 	
+ 	5. get bits right of start + fieldSize, sRight = bitpat_get(source, start + filedSize, lenSource - (start + fieldSize))
+ 	6. source = sLeft & val & sRight
  */
 void bitpat_set (*source, val, start, fieldSize)
+{
+	unsigned int lenSource, sLeft, sRight;
+	
+	lenSource = numberOfBits(*source)
+}
