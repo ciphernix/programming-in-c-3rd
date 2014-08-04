@@ -69,15 +69,33 @@ int bitpat_get(unsigned int source, int start, int n)
  * Sets bits of size fieldSize within source to val starting at 
  * 'start'.
  	1. get the number of bits needed to represent source (lenSource)
- 	2. get the bits left of 'start' index (bitpat_get(source, 0,start) - call this sLeft.
- 	3. leftshift sLeft by (lenSource - start)
+ 	2. get the bits left of 'start' index (bitpat_get(source, 0,start) - call this sleft.
+ 	3. leftshift sleft by (lenSource - start)
  	4. leftshift val by (lenSource - start) - fieldSize
- 	5. get bits right of start + fieldSize, sRight = bitpat_get(source, start + filedSize, lenSource - (start + fieldSize))
- 	6. source = sLeft & val & sRight
+ 	5. get bits right of start + fieldSize, sright = bitpat_get(source, start + filedSize, lenSource - (start + fieldSize))
+ 	6. source = sleft & val & sright
  */
-void bitpat_set (*source, val, start, fieldSize)
+void bitpat_set (int *source, int val, int start, int fieldSize)
 {
-	unsigned int lenSource, sLeft, sRight;
+	unsigned int lenSource, sleft, sright;
 	
-	lenSource = numberOfBits(*source)
+	lenSource = numberOfBits(*source);
+	sleft = bitpat_get (*source, 0, start);
+	sleft = sleft << (lenSource - start);
+	val = val << ((lenSource - start) - fieldSize));
+	sright = bitpat_get(*source, (start + fieldSize), lenSource - (start + fieldSize))
+	*source = sleft | val | sright;
+}
+
+int main (void)
+{
+	unsigned int source, val, start, fieldSize;
+	
+	printf("Enter source val start fieldSize :");
+	scanf("%u %u %u %u", &source, &val, &start, &fieldSize);
+	
+	bitpat_set(source, val, start, fieldSize);
+	printf("%u \n", source);
+	
+	return 0;
 }
