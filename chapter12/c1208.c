@@ -7,7 +7,7 @@
  * a third int that specifies the starting bit number (with the leftmost bit numbered 0); and a 
  * fourth int specifying the size of the field. So the call:
  * 	bitpat_set (&x, 0, 2, 5);
- * has the effect of setting the five bits contained in x, beggining with the third bit from
+ * has the effect of setting the five bits contained in x, begining with the third bit from
  * the left (bit number 2), to 0. Similarly, the call
  * 	bitpat_set (&x, 0x55u, 0, 8); 
  * sets the eight leftmost bits of x to hexadecimal 55.
