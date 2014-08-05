@@ -82,8 +82,8 @@ void bitpat_set (int *source, int val, int start, int fieldSize)
 	lenSource = numberOfBits(*source);
 	sleft = bitpat_get (*source, 0, start);
 	sleft = sleft << (lenSource - start);
-	val = val << ((lenSource - start) - fieldSize));
-	sright = bitpat_get(*source, (start + fieldSize), lenSource - (start + fieldSize))
+	val = val << ((lenSource - start) - fieldSize);
+	sright = bitpat_get(*source, (start + fieldSize), lenSource - (start + fieldSize));
 	*source = sleft | val | sright;
 }
 
@@ -94,7 +94,7 @@ int main (void)
 	printf("Enter source val start fieldSize :");
 	scanf("%u %u %u %u", &source, &val, &start, &fieldSize);
 	
-	bitpat_set(source, val, start, fieldSize);
+	bitpat_set(&source, val, start, fieldSize);
 	printf("%u \n", source);
 	
 	return 0;
