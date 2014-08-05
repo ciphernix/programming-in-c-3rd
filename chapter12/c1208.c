@@ -77,14 +77,18 @@ int bitpat_get(unsigned int source, int start, int n)
  */
 void bitpat_set (int *source, int val, int start, int fieldSize)
 {
-	unsigned int lenSource, sleft, sright;
+	unsigned int lenSource, sleft, sright, temp;
 	
 	lenSource = numberOfBits(*source);
 	sleft = bitpat_get (*source, 0, start);
-	sleft = sleft << (lenSource - start);
+	temp = numberOfBits(sleft);
+	sleft = sleft << (lenSource - temp);
+	//sleft = sleft << (lenSource - start);
 	val = val << ((lenSource - start) - fieldSize);
 	sright = bitpat_get(*source, (start + fieldSize), lenSource - (start + fieldSize));
 	*source = sleft | val | sright;
+	printf("sleft: %u, val: %u, sright: %u\n",sleft, val, sright);
+	printf("lenSoruce %u\n", lenSource);
 }
 
 int main (void)
