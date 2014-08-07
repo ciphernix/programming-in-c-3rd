@@ -15,9 +15,9 @@ int main (void)
 	c = getchar();
 	
 	if (IS_UPPER_CASE(c))
-		printf("%c is upper case\n");
+		printf("%c is upper case\n", c);
 	else 
-		printf("%c is lower case\n");
+		printf("%c is lower case\n", c);
 	
 	return 0;
 }

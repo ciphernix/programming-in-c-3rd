@@ -18,9 +18,9 @@ int main (void)
 	c = getchar();
 	
 	if (IS_ALPHABETIC(c))
-		printf("%c is an alphabetic character\n");
+		printf("%c is an alphabetic character\n", c);
 	else 
-		printf("%c is not an alphabetic character\n");
+		printf("%c is not an alphabetic character\n",c);
 	
 	return 0;
 }
