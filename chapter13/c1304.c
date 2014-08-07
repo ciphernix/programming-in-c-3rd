@@ -11,9 +11,9 @@
 int main(void)
 {
 	int x,y,z;
-	printf("x y z: ")
+	printf("x y z: ");
 	scanf("%i %i %i", &x, &y, &z);
-	printf("Max : %i\n", MAX(x,y,z));
+	printf("Max : %i\n", MAX3(x,y,z));
 	
 	return 0;
 }
