@@ -9,7 +9,7 @@
 
 #define IS_UPPER_CASE(c) ( ((c) >= 'A' && (c) <= 'Z' ) ? 1 : 0 )
 #define IS_LOWER_CASE(c) ( ((c) >= 'a' && (c) <= 'z' ) ? 1 : 0 )
-#define IS_ALPHABETIC(c) ( (IS_UPPER_CASE((c)) || IS_LOWER_CASE((c)) ? 1 : 0)
+#define IS_ALPHABETIC(c) ( (IS_UPPER_CASE((c)) || IS_LOWER_CASE((c)) ? 1 : 0) )
 
 int main (void)
 {
