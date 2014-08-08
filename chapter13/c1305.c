@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 
-#define shift(value,n) ( (n) > 0 ? (value) << (n) : ((n) < 0 ? (value) >> (-(n)) : value)
+#define shift(value,n) ( (n) > 0 ? (value) << (n) : ((n) < 0 ? (value) >> (-(n)) : value) )
 
 int main (void)
 {
