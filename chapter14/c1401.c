@@ -7,7 +7,7 @@
 #include <stdio.h>
 //int (*fnPtr) (void);
  
-typedef int (*fnPtr)(void) FunctionPtr;
+typedef int (*FunctionPtr)(void);
 
 int testFunction(void)
 {
