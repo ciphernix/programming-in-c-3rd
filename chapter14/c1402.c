@@ -7,7 +7,7 @@
  */
 
 #include <stdio.h>
-enum month { january = 1, february, march, april, may, june, \ 
+enum month { january = 1, february, march, april, may, june, \
 	july, august, september, october, november, december };
 
 char *monthName(enum month amonth)
