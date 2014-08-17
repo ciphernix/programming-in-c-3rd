@@ -45,19 +45,26 @@ int main (void)
 			else
 			{
 				printf("%c",c1);
-				if c
+				if ( c1 == '\n')
+					break;
 			}
+		}
 
-				c1_read
-			printf("%c",c1);
+		while (c2_read )
+		{
+			c2 = getc(file2);
+			if (c2 == EOF)
+				c2_read = false;
+			else
+			{
+				printf("%c",c2);
+				if ( c2 == '\n')
+					break;
+			}
+		}
 
-		while( (c2 = getc(file2) ) != EOF)
-			printf("%c",c2);
-
-		if (c1 == EOF && c2 == EOF)
-			break;
 	}
 	fclose(file1);
-	fclose(file1);
+	fclose(file2);
 	return 0;
 }

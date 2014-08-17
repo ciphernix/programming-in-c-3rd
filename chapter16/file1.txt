@@ -1,1 +1,5 @@
 Testing one Two Three.
+all lower case here
+another line.
+next to last line of file1.
+last line of file1.
