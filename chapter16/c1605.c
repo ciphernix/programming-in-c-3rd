@@ -28,9 +28,17 @@ int main(void)
 		if (col >= m && col <= n)
 			printf("%c", c); 
 		if (c == ' ')
+		{
+			//printf("Increasing col...\n");
 			col++;
-		if (c == '\n')
-			col = 1;		
+		}
+		if (c == '\n' && col > m)
+		{
+			printf("\n");
+			col = 1;
+		}
+		else if (c == '\n' )	
+			col = 1;
 	} 
 	fclose(f);
 	printf("\n");
