@@ -15,8 +15,8 @@ int main(void)
 	FILE *open(char filename[]);
 	FILE *f;
 	char filename[64];
-	char c,input;
-	int linecount = 0;
+	char c,input[2];
+	int i, linecount = 0;
 	
 	printf("Filename : ");
 	scanf("%63s",filename);
@@ -28,16 +28,18 @@ int main(void)
 			linecount++;
 		if (linecount == 20)
 		{
-			linecount == 0;
+			linecount = 0;
 			printf(":");
-			scanf("%c", &input);
-			if (input == 'q' || input == 'Q')
+		        scanf("%1s", input) ;
+			if (input[0] == 'q' || input[0] == 'Q')
+			{
 				fclose(f);
 				return 0;
+			}
 		}
 		printf("%c",c);
 	}
-	
+	printf("\n");	
 	fclose(f);
 	return 0;
 }
