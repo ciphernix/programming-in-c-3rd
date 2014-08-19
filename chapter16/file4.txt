@@ -1,0 +1,65 @@
+
+ne two three four five six seven eight nine ten
+  1 one two three four five six seven eight nine ten                                                                                       1,48          All
+  1 one two three four five six seven eight nine ten
+  2 one two three four five six seven eight nine ten
+  3 one two three four five six seven eight nine ten
+  4 one two three four five six seven eight nine ten
+  5 one two three four five six seven eight nine ten
+  6 one two three four five six seven eight nine ten
+  7 one two three four five six seven eight nine ten
+  8 one two three four five six seven eight nine ten
+  9 one two three four five six seven eight nine ten
+ 10 one two three four five six seven eight nine ten
+ 11 one two three four five six seven eight nine ten
+ 12 one two three four five six seven eight nine ten
+ 13 one two three four five six seven eight nine ten
+ 14 one two three four five six seven eight nine ten
+ 15 one two three four five six seven eight nine ten
+ 16 one two three four five six seven eight nine ten
+ 17 one two three four five six seven eight nine ten
+ 18 one two three four five six seven eight nine ten
+ 19 one two three four five six seven eight nine ten
+ 20 one two three four five six seven eight nine ten
+ 21 one two three four five six seven eight nine ten
+ 22 one two three four five six seven eight nine ten
+ 23 one two three four five six seven eight nine ten
+ 24 one two three four five six seven eight nine ten
+ 25 one two three four five six seven eight nine ten
+ 26 one two three four five six seven eight nine ten
+ 27 one two three four five six seven eight nine ten
+ 28 one two three four five six seven eight nine ten
+ 29 one two three four five six seven eight nine ten
+:$
+ 46 one two three four five six seven eight nine ten
+ 47 one two three four five six seven eight nine ten
+ 48 one two three four five six seven eight nine ten
+ 49 one two three four five six seven eight nine ten
+ 50 one two three four five six seven eight nine ten
+ 51 one two three four five six seven eight nine ten
+ 52 one two three four five six seven eight nine ten
+ 53 one two three four five six seven eight nine ten
+ 54 one two three four five six seven eight nine ten
+ 55 one two three four five six seven eight nine ten
+ 56 one two three four five six seven eight nine ten
+ 57 one two three four five six seven eight nine ten
+ 58 one two three four five six seven eight nine ten
+ 59 one two three four five six seven eight nine ten
+ 60 one two three four five six seven eight nine ten
+ 61 one two three four five six seven eight nine ten
+ 62 one two three four five six seven eight nine ten
+ 63 one two three four five six seven eight nine ten
+ 64 one two three four five six seven eight nine ten
+ 65 one two three four five six seven eight nine ten
+ 66 one two three four five six seven eight nine ten
+ 67 one two three four five six seven eight nine ten
+ 68 one two three four five six seven eight nine ten
+ 69 one two three four five six seven eight nine ten
+ 70 one two three four five six seven eight nine ten
+ 71 one two three four five six seven eight nine ten
+ 72 one two three four five six seven eight nine ten
+ 73 one two three four five six seven eight nine ten
+ 74 one two three four five six seven eight nine ten
+"file3.txt" [New] 74L, 3626C written
+done
+end of file!

@@ -66,5 +66,6 @@ int main (void)
 	}
 	fclose(file1);
 	fclose(file2);
+	printf("\n");
 	return 0;
 }

@@ -33,5 +33,6 @@ int main(void)
 			col = 1;		
 	} 
 	fclose(f);
+	printf("\n");
 	return 0;
 }
