@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char * getline(void) {
+char * mygetline(void) {
     char * line = malloc(100), * linep = line;
     size_t lenmax = 100, len = lenmax;
     int c;
@@ -35,6 +35,6 @@ char * getline(void) {
 
 int main(void)
 {
-     printf("%s", getline());
+     printf("%s", mygetline());
      return 0;
 }
